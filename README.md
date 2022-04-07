@@ -1,7 +1,5 @@
 # skillbar
-Replacement skillbar for QBus
-
-This is a direct replacement for qb-skillbar
+This is a direct replacement for QBus qb-skillbar
 
 Installation:
 Remove qb-skillbar from [qb] directory
