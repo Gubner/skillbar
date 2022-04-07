@@ -2,8 +2,7 @@
 This is a direct replacement for QBus qb-skillbar
 
 Installation:
-Remove qb-skillbar from [qb] directory
-Rename this resource to "qb-skillbar" and put in [qb] directory
+Remove qb-skillbar from [qb] directory. Rename this resource to "qb-skillbar" and put in [qb] directory
 
 ---------------------------------------------------------------
 Example implementation for lockpicking cars:
