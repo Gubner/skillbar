@@ -2,8 +2,8 @@ local QBCore = exports['qb-core']:GetCoreObject()
 Skillbar = {}
 Skillbar.Data = {}
 Skillbar.Data = {
-    Active = false,
-    Data = {},
+	Active = false,
+	Data = {},
 }
 successCb = nil
 failCb = nil
@@ -19,42 +19,42 @@ local Message = ""
 
 function MinigameCb(data)
 	if successCb ~= nil then
-        Skillbar.Data.Active = false
-        if data then
-            successCb()
-        else
-            failCb()
+		Skillbar.Data.Active = false
+		if data then
+				successCb()
+			else
+				failCb()
 		end
 	end
 end
 
 Skillbar.Start = function(data, success, fail)
-    if not Skillbar.Data.Active then
-        Skillbar.Data.Active = true
-        if success ~= nil then
-            successCb = success
-        end
-        if fail ~= nil then
-            failCb = fail
-        end
-        Skillbar.Data.Data = data
+	if not Skillbar.Data.Active then
+		Skillbar.Data.Active = true
+		if success ~= nil then
+			successCb = success
+		end
+		if fail ~= nil then
+			failCb = fail
+		end
+		Skillbar.Data.Data = data
 		Minigame(data.duration, data.pos, data.width)
-    else
-        QBCore.Functions.Notify('You are already doing something...', 'error')
-    end
+	else
+		QBCore.Functions.Notify('You are already doing something...', 'error')
+	end
 end
 
 Skillbar.Repeat = function(data)
-    Skillbar.Data.Active = true
-    Skillbar.Data.Data = data
-    Citizen.CreateThread(function()
-        Wait(100)
+	Skillbar.Data.Active = true
+	Skillbar.Data.Data = data
+	Citizen.CreateThread(function()
+		Wait(100)
 		Minigame(data.duration, data.pos, data.width)
-    end)
+	end)
 end
 
 function GetSkillbarObject()
-    return Skillbar
+	return Skillbar
 end
 
 -- duration -> movement increments (speed); pos -> skillbar width; width -> target width. duration, pos, and width nomenclature used for backward compatibility. 
@@ -147,4 +147,6 @@ function DisplayResult()
 		Wait(10)
 	end
 end
+
+
 
