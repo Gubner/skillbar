@@ -108,6 +108,13 @@ function Minigame(duration, pos, width)
 				end
 				Skillbar.Data.Active = false
 			end
+			if IsControlJustReleased(0, 194)  or IsControlJustReleased(0, 202) then -- BACKSPACE key
+				Message = "Cancelled"
+				Skillbar.Data.Result = false
+				MinigameCb(Skillbar.Data.Result)
+				Skillbar.Data.Active = false
+				DisplayResult()
+			end
 			if TraverseCount > Config.TraverseCount then
 				Skillbar.Data.Result = false -- Gives additional data to export
 				MinigameCb(Skillbar.Data.Result)
