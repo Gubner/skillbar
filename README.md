@@ -1,5 +1,5 @@
 # skillbar
-This is a direct replacement for QBus qb-skillbar
+This is a direct replacement for QBCore Framework qb-skillbar
 
 Installation:
 Remove qb-skillbar from [qb] directory. Rename this resource to "qb-skillbar" and put in [qb] directory
